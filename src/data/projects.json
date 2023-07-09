@@ -1,0 +1,76 @@
+{
+  "projects": [
+    {
+      "id": 1,
+      "projectName": "Project X",
+      "currentProjects": 3,
+      "startDate": "2023-01-01",
+      "endDate": "2023-03-31",
+      "onlineStatus": true,
+      "teamMembers": [
+        {
+          "id": 1,
+          "userName": "john.doe",
+          "name": "John Doe",
+          "position": "Project Manager",
+          "email": "john.doe@example.com",
+          "avatar": "https://example.com/avatar1.jpg"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "projectName": "Project Y",
+      "currentProjects": 1,
+      "startDate": "2023-01-01",
+      "endDate": "2023-03-31",
+      "onlineStatus": true,
+      "teamMembers": [
+        {
+          "id": 1,
+          "userName": "john.doe",
+          "name": "John Doe",
+          "position": "Project Manager",
+          "email": "john.doe@example.com",
+          "avatar": "https://example.com/avatar1.jpg"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "projectName": "Project Z",
+      "currentProjects": 2,
+      "startDate": "2023-01-01",
+      "endDate": "2023-03-31",
+      "onlineStatus": true,
+      "teamMembers": [
+        {
+          "id": 1,
+          "userName": "john.doe",
+          "name": "John Doe",
+          "position": "Project Manager",
+          "email": "john.doe@example.com",
+          "avatar": "https://example.com/avatar1.jpg"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "projectName": "Project A",
+      "currentProjects": 1,
+      "startDate": "2023-01-01",
+      "endDate": "2023-03-31",
+      "onlineStatus": true,
+      "teamMembers": [
+        {
+          "id": 1,
+          "userName": "john.doe",
+          "name": "John Doe",
+          "position": "Project Manager",
+          "email": "john.doe@example.com",
+          "avatar": "https://example.com/avatar1.jpg"
+        }
+      ]
+    }
+  ]
+}
