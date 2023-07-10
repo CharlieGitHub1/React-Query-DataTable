@@ -128,7 +128,8 @@ export const MainContainer = styled.main`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 100%;
+  width: 90%;
+  margin: 0 auto;
 `;
 
 export const Table = styled.table`
@@ -139,8 +140,7 @@ export const Table = styled.table`
 
   font-weight: 400;
   font-size: 0.875rem;
-  padding: 0.5rem;
-  max-width: 1100px;
+  padding: 0.2rem;
 
   width: 100%;
   border-collapse: collapse;
@@ -180,8 +180,8 @@ export const TableRow = styled.tr`
 
   font-weight: 400;
   font-size: 0.875rem;
-  /* margin: 0; */
-  padding: 1rem;
+
+  padding: 1rem 0.5rem;
   width: 100%;
 
   border-radius: 0.25rem;
@@ -192,6 +192,7 @@ export const TableRow = styled.tr`
   }
 
   &:hover {
+    cursor: pointer;
     background-color: #e0e0e0;
   }
 `;
@@ -199,10 +200,12 @@ export const TableRow = styled.tr`
 export const TableHeaderCell = styled.th`
   color: #25213b;
   font-weight: 700;
-  font-size: 1rem;
+  font-size: 0.875rem;
   text-align: center;
+  justify-content: center;
+  align-items: center;
   width: 100%;
-  padding: 0.5rem 0.5rem;
+  padding: 0.1rem 0.1rem;
   margin: 0;
 `;
 
@@ -217,7 +220,7 @@ export const TableDataCell = styled.td`
   justify-content: center;
   align-items: center;
   width: 100%;
-  padding: 0.5rem 0.5rem;
+  padding: 0.2rem 0.2rem;
   margin: 0 0.5rem;
 
   & > div {
@@ -228,14 +231,14 @@ export const TableDataCell = styled.td`
     color: gray;
     font-weight: 400;
     font-size: 0.875rem;
-    text-align: left;
+    text-align: center;
 
     img {
       display: flex;
       justify-content: center;
       align-items: center;
       width: 40px;
-      height: 40px;
+      height: 30px;
       background-color: #5e5adb;
       border-radius: 50%;
       border: 1px solid #e0e0e0;
