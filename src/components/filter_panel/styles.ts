@@ -7,12 +7,10 @@ export const FilterPanelContainer = styled.div`
   justify-content: space-between;
   align-items: center;
   align-self: flex-start;
-  /* margin: 0 auto; */
   width: 100%;
   align-items: center;
   height: auto;
   align-items: flex-start;
-  padding: 0.5rem 0.5rem;
 `;
 
 export const LeftWrapper = styled.div`
@@ -21,35 +19,25 @@ export const LeftWrapper = styled.div`
   justify-content: flex-start;
   align-items: left;
   align-self: flex-start;
-  width: auto;
-  height: auto;
-`;
-
-export const RightWrapper = styled.div`
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: right;
-  align-self: flex-end;
-  width: auto;
-  height: auto;
+  margin-bottom: 2.5rem;
+  width: 50%;
 `;
 
 export const InputWrapper = styled.div`
   display: flex;
-  width: 100%;
-  padding: 0.46rem 1rem;
+  width: 65%;
+  padding: 0.472rem 1rem;
   justify-content: center;
   align-items: center;
-  /* margin-bottom: 2px; */
-  border: none;
-  border-radius: 0px 6px 6px 0px;
+  margin-bottom: 2px;
+  border: 1px solid rgba(66, 51, 147, 1);
+  border-radius: 0px 0.2rem 0.2rem 0px;
   background-color: #fff;
-  box-shadow: 0px 0px 0px 1px #ccc, 0px 1px 1px 0px rgba(0, 0, 0, 0.1);
-  color: #333;
+
+  color: rgba(66, 51, 147, 1);
 
   &:focus {
-    outline: 1px solid #5e5adb;
+    outline: 1px solid #3f3d56;
   }
 `;
 
@@ -59,59 +47,36 @@ export const SearchInput = styled.input`
   background-color: transparent;
   font-size: 0.875rem;
   font-weight: 400;
-  color: #333;
+  color: #25213b;
   &:focus {
     outline: none;
   }
 
   &::placeholder {
-    color: 0px 0px 0px 1px #ccc;
+    color: #25213b;
   }
 `;
 
 export const NewProjectButton = styled.button`
   display: inline-flex;
-
-  padding: 0.6rem 1rem;
+  padding: 0.772rem 2rem;
   justify-content: center;
   align-items: flex-end;
   align-self: right;
   font-size: 0.875rem;
   font-weight: 600;
-  border-radius: 0.375rem;
-
-  background: #5e5adb;
+  border-radius: 0.2rem;
+  background-color: rgba(66, 51, 147, 1);
   border: none;
-  box-shadow: 0px 0px 0px 1px #5e5adb, 0px 1px 1px 0px rgba(0, 0, 0, 0.1);
-
-  color: white;
+  color: #fff;
   border: none;
   cursor: pointer;
-
   &:hover {
-    background-color: #fff;
-    color: #5e5adb;
+    background-color: rgba(150, 270, 275, 1);
+    color: rgba(66, 51, 147, 1);
     transition: all 0.2s ease-in-out;
     transform: scale(1.02);
   }
-`;
-
-export const FilterButton = styled.button`
-  padding: 5px;
-  margin-bottom: 10px;
-  background-color: #f2f2f2;
-  border: none;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-`;
-
-export const FilterIcon = styled.span`
-  margin-right: 5px;
-`;
-
-export const AllText = styled.span`
-  font-weight: bold;
 `;
 
 export const ItemListContainer = styled.div`
@@ -121,16 +86,8 @@ export const ItemListContainer = styled.div`
   justify-content: flex-start;
   align-items: flex-start;
   flex-wrap: wrap;
-  height: 100%;
   width: 100%;
-  bottom: 0;
-  left: 0;
-  right: 0;
-
-  /* padding: 0.5rem 0.5rem; */
-
   .tab-items {
-    gap: 0.5rem;
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -142,14 +99,15 @@ export const ItemLabel = styled.span`
   display: flex;
   flex-direction: row;
   font-weight: 600;
-  background-color: #5e5adb;
-  padding: 0.05rem 0.5rem;
+  background-color: none;
+  padding: 0.1rem 4rem;
   border: none;
   width: 100%;
   font-size: 0.875rem;
-  border-radius: 0.175rem 0rem 0rem 0.175rem;
+  border-radius: 0.2rem;
   color: #fff;
-  justify-content: center;
+  background-color: rgba(66, 51, 147, 1);
+  margin-right: 0.5rem;
   align-items: center;
 `;
 
@@ -158,13 +116,16 @@ export const ItemValue = styled.span`
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  font-size: 0.875rem;
+  font-size: 0.7rem;
   border: none;
-  width: 24px;
-  height: 21px;
-  padding: 0.15rem 0.1rem;
+  width: 14px;
+  height: 14px;
+  padding: 0.5rem 0.5rem;
+  border: 1px solid rgba(150, 270, 275, 1);
+  margin: 0 0.2rem;
   font-weight: 900;
-  border-radius: 0px 6px 6px 0px;
+  border-radius: 20%;
   margin-right: 1rem;
-  color: #5e5adb;
+  background-color: rgba(66, 51, 147, 1);
+  color: rgba(150, 270, 275, 1);
 `;

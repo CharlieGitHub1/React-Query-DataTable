@@ -4,17 +4,12 @@ import {
   FilterPanelContainer,
   SearchInput,
   NewProjectButton,
-  FilterButton,
-  FilterIcon,
-  AllText,
   ItemListContainer,
   ItemLabel,
   ItemValue,
   LeftWrapper,
-  RightWrapper,
   InputWrapper,
 } from './styles';
-import { BiFilterAlt } from 'react-icons/bi';
 import { BiSearch } from 'react-icons/bi';
 
 interface Item {

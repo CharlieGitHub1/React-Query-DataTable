@@ -1,126 +1,14 @@
 import styled from 'styled-components';
 
 export const AppContainer = styled.div`
-  header {
-    display: flex;
-    align-items: center;
-    position: sticky;
-    top: 0;
-    background-color: white;
-    box-shadow: 0 1px 10px 0 rgba(0, 0, 0, 0.4);
-    padding: 0 0.5rem;
-    height: 40px;
-
-    button {
-      background: blue;
-      border: none;
-      padding: 0.3rem 0.5rem;
-      margin: 0;
-      cursor: pointer;
-      border-radius: 0.25rem;
-      svg {
-        font-size: 1.3rem;
-        color: #fff;
-      }
-    }
-  }
-
-  menu-icon-btn {
-    background: none;
-    border: none;
-    padding: 0;
-    margin: 0;
-    cursor: pointer;
-  }
-
-  menu-icon {
-    width: 25px;
-    height: 25px;
-    fill: rgb(96, 96, 96);
-    cursor: pointer;
-  }
-
-  menu-icon:hover {
-    fill: #282c34;
-  }
-
-  middle-sidebar {
-    overflow-y: auto;
-    overflow-x: hidden;
-    flex-grow: 1;
-
-    margin: 1rem 0;
-  }
-  bottom-sidebar {
-    margin-top: auto;
-  }
-
-  sidebar-list {
-    margin: 0;
-    padding: 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    list-style: none;
-  }
-
-  sidebar-icon {
-    width: 25px;
-    height: 25px;
-    flex-shrink: 0;
-  }
-
-  sidebar-link {
-    display: flex;
-    width: 100%;
-    padding: 0.5rem 0;
-    color: rgb(96, 96, 96);
-    text-decoration: none;
-    align-items: center;
-    padding-left: 25px;
-  }
-
-  sidebar-list-item {
-    position: relative;
-    width: 100%;
-    fill: rgb(144, 144, 144);
-
-    &::before {
-      content: '';
-      background-color: rgb(17, 37, 78);
-      height: 100%;
-      left: 0;
-      width: 3px;
-      position: absolute;
-    }
-
-    &::active {
-      fill: rgb(17, 37, 78);
-      background-color: rgb(244, 244, 244);
-    }
-
-    &:hover {
-      background-color: rgb(244, 244, 244);
-    }
-  }
-
-  your-channel {
-    color: #282c34;
-    font-size: 0.75rem;
-    font-weight: bold;
-    margin-bottom: 0.15rem;
-    margin-top: 0.5rem;
-  }
-
-  channel-name {
-    color: rgb(96, 96, 96);
-    font-size: 0.75rem;
-  }
-
-  hidden-sidebar {
-    text-align: center;
-    width: 100%;
-  }
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: auto;
+  background-color: #25213b;
 `;
 
 export const MainContainer = styled.main`
@@ -128,135 +16,94 @@ export const MainContainer = styled.main`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 90%;
-  margin: 0 auto;
-`;
-
-export const Table = styled.table`
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-
-  font-weight: 400;
-  font-size: 0.875rem;
-  padding: 0.2rem;
-
-  width: 100%;
-  border-collapse: collapse;
-  border: 1px solid #e0e0e0;
-  border-radius: 0.25rem;
-`;
-
-export const TableHeader = styled.thead`
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  color: #25213b;
-  font-weight: 600;
-  font-size: 0.875rem;
-
-  width: 100%;
-`;
-
-export const TableBody = styled.tbody`
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-
-  font-weight: 400;
-  font-size: 0.875rem;
-
-  width: 100%;
-`;
-
-export const TableRow = styled.tr`
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-
-  font-weight: 400;
-  font-size: 0.875rem;
-
+  border-radius: 0.275rem;
   padding: 1rem 0.5rem;
-  width: 100%;
+  margin: 1rem 0.5rem;
+  width: 100vw;
+  height: 100%;
+  background-color: #25213b;
 
-  border-radius: 0.25rem;
-  background-color: #fff;
-
-  &:nth-child(even) {
-    background-color: #f5f5f5;
-  }
-
-  &:hover {
-    cursor: pointer;
-    background-color: #e0e0e0;
+  @media (min-width: 768px) {
+    padding: 1rem 2rem;
   }
 `;
 
-export const TableHeaderCell = styled.th`
-  color: #25213b;
-  font-weight: 700;
-  font-size: 0.875rem;
-  text-align: center;
-  justify-content: center;
+export const HeaderContainer = styled.header`
+  display: flex;
+  justify-content: space-between;
   align-items: center;
+  height: 5vh;
   width: 100%;
-  padding: 0.1rem 0.1rem;
-  margin: 0;
+  padding: 1rem 0.5rem;
+  box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.25);
+  background-color: rgba(66, 51, 147, 1);
+  z-index: 1;
+
+  @media (min-width: 768px) {
+    padding: 1rem 2rem;
+  }
+
+  @media (min-width: 1024px) {
+    padding: 1rem 4rem;
+  }
 `;
 
-export const TableDataCell = styled.td`
+export const HeaderText = styled.h1`
+  font-weight: bold;
+  font-size: 1.5rem;
+  color: #fff;
+`;
+
+export const SectionOneWrapper = styled.section`
   display: flex;
   flex-direction: column;
-
-  color: gray;
-  font-weight: 400;
-  font-size: 0.875rem;
-  text-align: left;
   justify-content: center;
   align-items: center;
+  border-radius: 0.275rem;
+  padding: 1rem 0.5rem;
+  margin: 1rem 0.5rem;
   width: 100%;
-  padding: 0.2rem 0.2rem;
-  margin: 0 0.5rem;
+  height: 100%;
+  background-color: transparent;
+  @media (min-width: 768px) {
+    padding: 1rem 2rem;
+  }
 
-  & > div {
-    display: flex;
+  @media (min-width: 1024px) {
+    padding: 1rem 4rem;
+  }
+`;
 
-    justify-content: center;
-    align-items: center;
-    color: gray;
-    font-weight: 400;
-    font-size: 0.875rem;
-    text-align: center;
+export const FooterContainer = styled.footer`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 5vh;
+  width: 100%;
+  padding: 1rem 0.5rem;
+  box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.25);
+  background-color: #25213b;
+  z-index: 1;
 
-    img {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      width: 40px;
-      height: 30px;
-      background-color: #5e5adb;
-      border-radius: 50%;
-      border: 1px solid #e0e0e0;
-      margin-right: 1rem;
-      padding: 0.5rem;
-      margin: 0 0.5rem;
-    }
+  @media (min-width: 768px) {
+    padding: 1rem 2rem;
+  }
 
-    span {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      color: gray;
-      font-weight: 500;
-      font-size: 0.875rem;
-      text-align: left;
-      margin: 0 0.25rem;
-      width: 100%;
-    }
+  @media (min-width: 1024px) {
+    padding: 1rem 4rem;
+  }
+`;
+
+export const FooterText = styled.p`
+  font-weight: 400;
+  font-size: 0.875rem;
+  color: #fff;
+
+  @media (min-width: 768px) {
+    font-size: 1rem;
+  }
+
+  @media (min-width: 1024px) {
+    font-size: 1.25rem;
   }
 `;

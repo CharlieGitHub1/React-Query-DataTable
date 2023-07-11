@@ -1,14 +1,33 @@
 import React from 'react';
-import { AppContainer, MainContainer } from './AppStyles';
+import {
+  AppContainer,
+  MainContainer,
+  HeaderContainer,
+  SectionOneWrapper,
+  FooterContainer,
+  FooterText,
+  HeaderText,
+} from './AppStyles';
 import TableList from './components/data_table/TableList';
+import StatusBar from './components/status_bar/StatusBar';
+import SaveButton from './components/button/SaveButton';
 
 const App = () => {
   return (
     <AppContainer>
+      <HeaderContainer>
+        <HeaderText>Data Table</HeaderText>
+        <StatusBar />
+      </HeaderContainer>
       <MainContainer>
-        <h6>MAIN CONTENT</h6>
-        <TableList />
+        <SaveButton />
+        <SectionOneWrapper>
+          <TableList />
+        </SectionOneWrapper>
       </MainContainer>
+      <FooterContainer>
+        <FooterText>Footer Content</FooterText>
+      </FooterContainer>
     </AppContainer>
   );
 };

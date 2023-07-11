@@ -1,4 +1,4 @@
-import React, { useState, useReducer } from 'react';
+import { useReducer } from 'react';
 import data from '../../data/projects.json';
 import {
   createColumnHelper,
@@ -9,6 +9,8 @@ import {
 import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query';
 import FilterPanelWithItemList from '../filter_panel/FilterPanelWithItemList';
 import {
+  Container,
+  HeaderContainer,
   Table,
   TableHeader,
   TableBody,
@@ -16,8 +18,8 @@ import {
   TableHeaderCell,
   TableDataCell,
 } from './styles';
-import { getValue, wait } from '@testing-library/user-event/dist/utils';
-import { idText } from 'typescript';
+
+import { wait } from '@testing-library/user-event/dist/utils';
 
 export interface IProject {
   id: number;
@@ -68,35 +70,6 @@ const columns = [
     header: () => <span>Team Members</span>,
     cell: (info) => info.renderValue(),
   }),
-
-  //   {
-  //     Header: 'Project ID',
-  //     accessor: 'id',
-  //   },
-  //   {
-  //     Header: 'Project Name',
-  //     accessor: 'projectName',
-  //   },
-  //   {
-  //     Header: 'Current Projects',
-  //     accessor: 'currentProjects',
-  //   },
-  //   {
-  //     Header: 'Start Date',
-  //     accessor: 'startDate',
-  //   },
-  //   {
-  //     Header: 'End Date',
-  //     accessor: 'endDate',
-  //   },
-  //   {
-  //     Header: 'Online Status',
-  //     accessor: 'onlineStatus',
-  //   },
-  //   {
-  //     Header: 'Team Members',
-  //     accessor: 'teamMembers',
-  //   },
 ];
 
 const items = [
@@ -172,60 +145,84 @@ const TableList = () => {
       </pre>
     );
   return (
-    <Table>
-      <FilterPanelWithItemList items={items} />
-      <TableHeader>
-        <TableRow>
-          {tableInstance.getHeaderGroups().map((headerGroup) => (
-            <TableHeaderCell key={headerGroup.id}>
-              {headerGroup.headers.map((header) => (
-                <div key={header.id}>
-                  {header.isPlaceholder
-                    ? null
-                    : flexRender(
-                        header.column.columnDef.header,
-                        header.getContext()
-                      )}
-                </div>
-              ))}
-            </TableHeaderCell>
-          ))}
-
-          {/* {columns.map((column) => (
-            <TableHeaderCell key={column.accessor}>
-              {column.Header}
-            </TableHeaderCell>
-          ))} */}
-        </TableRow>
-      </TableHeader>
-      <TableBody>
-        {projectQuery.data?.map((project) => {
-          return (
-            <TableRow key={project.id}>
-              <TableDataCell>{project.id}</TableDataCell>
-              <TableDataCell>{project.projectName}</TableDataCell>
-              <TableDataCell>{project.currentProjects}</TableDataCell>
-              <TableDataCell>{project.startDate}</TableDataCell>
-              <TableDataCell>{project.endDate}</TableDataCell>
-              <TableDataCell>
-                {project.onlineStatus ? 'Online' : 'Offline'}
-              </TableDataCell>
-              <TableDataCell>
-                {project.teamMembers.map((user) => {
-                  return (
-                    <div key={user.id}>
-                      <img src={user.avatar} alt={user.name} />
-                      <span>{user.name}</span>
-                    </div>
-                  );
-                })}
-              </TableDataCell>
-            </TableRow>
-          );
-        })}
-      </TableBody>
-      <button onClick={() => handleAddProject()}>Add Project</button>
-    </Table>
+    <Container>
+      <HeaderContainer>
+        <FilterPanelWithItemList items={items} />
+      </HeaderContainer>
+      <Table>
+        <TableHeader>
+          <TableRow>
+            {tableInstance.getHeaderGroups().map((headerGroup) => (
+              <TableHeaderCell key={headerGroup.id}>
+                {headerGroup.headers.map((header) => (
+                  <div key={header.id}>
+                    {header.isPlaceholder
+                      ? null
+                      : flexRender(
+                          header.column.columnDef.header,
+                          header.getContext()
+                        )}
+                  </div>
+                ))}
+              </TableHeaderCell>
+            ))}
+          </TableRow>
+        </TableHeader>
+        <TableBody>
+          {projectQuery.data?.map((project) => {
+            return (
+              <TableRow key={project.id}>
+                <TableDataCell>{project.id}</TableDataCell>
+                <TableDataCell>{project.projectName}</TableDataCell>
+                <TableDataCell>{project.currentProjects}</TableDataCell>
+                <TableDataCell>{project.startDate}</TableDataCell>
+                <TableDataCell>{project.endDate}</TableDataCell>
+                <TableDataCell>
+                  {project.onlineStatus ? 'Online' : 'Offline'}
+                </TableDataCell>
+                <TableDataCell>
+                  {project.teamMembers.map((user) => {
+                    return (
+                      <div key={user.id}>
+                        <img
+                          className="avatar"
+                          src={user.avatar}
+                          alt={user.name}
+                        />
+                        <span>{user.name}</span>
+                      </div>
+                    );
+                  })}
+                </TableDataCell>
+              </TableRow>
+            );
+          })}
+        </TableBody>
+        <button
+          style={{
+            display: 'flex',
+            width: '40px',
+            height: '40px',
+            margin: '20px',
+            padding: '0',
+            alignItems: 'center',
+            justifyContent: 'center',
+            backgroundColor: 'rgba(66, 51, 147, 1)',
+            borderRadius: '100px',
+            border: '.08rem solid #535366',
+            cursor: 'pointer',
+            outline: 'none',
+            fontSize: '2.5rem',
+            fontWeight: '400',
+            color: '#fff',
+            boxShadow: '0 2px 6px rgba(0, 0, 0, 0.5)',
+          }}
+          onClick={() => handleAddProject()}
+        >
+          +
+        </button>
+      </Table>
+    </Container>
   );
 };
 

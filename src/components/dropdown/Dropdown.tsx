@@ -26,7 +26,7 @@ const Dropdown: React.FC = () => {
     <DropdownContainer>
       <DropdownButton onClick={toggleDropdown}>
         <span>{selectedItem}</span>
-        <BsFillCaretDownFill size={14} color={'#fff'} />
+        <BsFillCaretDownFill size={14} color={' #fff'} />
       </DropdownButton>
       {isOpen && (
         <DropdownList>
